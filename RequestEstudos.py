@@ -27,4 +27,6 @@ def retorna_rua(d):
 
 
 print(retorna_rua(d))
-# Mostrando a branch total
+
+
+https://www.mercadobitcoin.net/api/<coin>/<method>/
