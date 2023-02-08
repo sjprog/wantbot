@@ -1,1 +1,1 @@
-Bem Vindo ao WantBot!!!
+Bem Vindo ao WantBot!
