@@ -26,5 +26,29 @@ v2 = Veiculo('Caminhao','Terrestre')
 
 v2.tipoVeiculo()
 
+moto = Veiculo("Honda","Terrestre")
+
+barco = Veiculo("Barco pequeno","Maritimo")
+
+
+import json
+
+json_string = '{"primeiro_nome":"Sidney", "Ultimo_nome":"Siqueira"}'
+
+json_dict = json.loads(json_string)
+
+d = {
+    'primeiro_nome': 'Sidney',
+    'Segundo_nome': 'Siqueira',
+    'Titles': ['BDFL', 'Developer'],
+}
+
+d_json = json.dumps(d)
+
+
+
+
+
+
 
 
