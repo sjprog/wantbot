@@ -1,5 +1,7 @@
 import requests
 
+# ===========================================================================
+
 # resp = requests.get("https://viacep.com.br/ws/01001000/json/")
 
 # # print(resp.text)
@@ -10,23 +12,33 @@ import requests
 
 # print(dd)
 
+# ===========================================================================
 
-def get_info_cep(cep):
+# def get_info_cep(cep):
 
-    url_base = f'https://viacep.com.br/ws/{cep}/json/'
+#     url_base = f'https://viacep.com.br/ws/{cep}/json/'
+#     r = requests.get(url_base)
+#     return r.json()
+
+# d = get_info_cep('71825115')
+
+# # print(d)
+
+
+# def retorna_rua(d):
+#     return d['logradouro']
+
+
+# print(retorna_rua(d))
+
+# ===========================================================================
+
+def get_ticks(moeda='BTC',metodo='ticker'):
+
+    url_base = f'https://www.mercadobitcoin.net/api/{moeda}/{metodo}/'
     r = requests.get(url_base)
     return r.json()
 
-d = get_info_cep('71825115')
+d = get_ticks('ETH')
 
-# print(d)
-
-
-def retorna_rua(d):
-    return d['logradouro']
-
-
-print(retorna_rua(d))
-
-
-https://www.mercadobitcoin.net/api/<coin>/<method>/
+print(d)
