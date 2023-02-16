@@ -1,7 +1,20 @@
+
+# Nome do robo: WantBot  Want_SK_Bot
+
+import time
+
 import requests
 
-url_telegram_base = "http://api.telegram.org/bot6170956894:AAHR1o4NtuD7syuKFcGUwMHYMM6jkU4VA2I"
+token = '6170956894:AAHR1o4NtuD7syuKFcGUwMHYMM6jkU4VA2I'
 
-resposta = requests.post(url_telegram_base + "/getUpdates")
+url_base = f'http://api.telegram.org/bot{token}'
 
-resposta_dict = resposta.json()
+
+while True:
+    r = requests.get(url_base + "/getUpdates")
+
+    resposta_dict = r.json()
+
+    print(resposta_dict)
+
+    time.sleep(5)
