@@ -1,5 +1,5 @@
 
-# Nome do robo: WantBot  Want_SK_Bot
+# Nome do Rob: WantBot  Want_SK_Bot
 
 import time
 
