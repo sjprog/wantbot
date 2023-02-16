@@ -1,4 +1,4 @@
-import requests
+# import requests
 
 # ===========================================================================
 
@@ -45,10 +45,10 @@ import requests
 
 # =============================================================================
 
-def get_movie(nome='matrix'):
+# def get_movie(nome='matrix'):
 
-    url_base = f'http://www.omdbapi.com/?apikey=83b61bea&t={nome}'
-    r = requests.get(url_base)
-    return r.json()
+#     url_base = f'http://www.omdbapi.com/?apikey=83b61bea&t={nome}'
+#     r = requests.get(url_base)
+#     return r.json()
 
-print(get_movie())
+# print(get_movie())
