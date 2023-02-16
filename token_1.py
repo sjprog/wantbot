@@ -1,3 +1,0 @@
-
-
-token = '6170956894:AAHR1o4NtuD7syuKFcGUwMHYMM6jkU4VA2I'
