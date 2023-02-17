@@ -15,6 +15,11 @@ while True:
 
     resposta_dict = r.json()
 
-    print(resposta_dict)
+    # print(resposta_dict)
+    print(resposta_dict['result'])
 
     time.sleep(5)
+
+
+
+    
