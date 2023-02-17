@@ -19,13 +19,16 @@ class TelegramBot:
             dados = updates["result"]
 
             print(dados)
+            update_id = dados[0]['update_id']
+            print("Update ID = ", update_id)
+            
 
             print("------------------------------")
             time.sleep(5)
 
     def obter_updates(self):
 
-        link_api = self.url_base+"getUpdates"
+        link_api = self.url_base + "getUpdates"
 
         r = requests.get(link_api)
         return r.json()
