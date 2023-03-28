@@ -12,24 +12,40 @@ class TelegramBot:
         self.url_base = f'http://api.telegram.org/bot{token}/'
 
     def Iniciar(self):
-        update_id = None
+        find_cep = False
+
+        updates = self.obter_updates()
+        dados = updates["result"]
+        chat_id_ = dados[-1]["message"]["from"]["id"]
+        self.responder("Digite o CEP para encontrar o endereço.",chat_id_)
+
+       
         while True:
             updates = self.obter_updates()            
 
             dados = updates["result"]
 
-            print(dados)
-            update_id = dados[-1]['update_id']
+            # print(dados)
+            pdate_id = dados[-1]['update_id']
 
-            mensagem = str(dados[0]["message"]["text"])
+            mensagem = str(dados[-1]["message"]["text"])
             chat_id_ = dados[-1]["message"]["from"]["id"]
 
             nome = dados[-1]["message"]["from"]["first_name"]
 
-            print("Chat ID = ", chat_id_)
-            print('Mensagem = ', mensagem)
+            if mensagem and not(find_cep):
+                print("Aguardando cep...")
+                if len(mensagem)==8:
+                    print("Tamanho de cep Ok!")
+                    c = self.get_info_cep(mensagem)
+                    self.responder("Sua rua é = "+c['logradouro'],chat_id_)
+                    self.responder("Seu estado é = "+c['uf'],chat_id_)
+                    find_cep = True
 
-            self.responder("Olá "+nome+" Meu nome é Robô Telegram. ",chat_id_)
+            # print("Chat ID = ", chat_id_)
+            # print('Mensagem = ', mensagem)
+
+            # self.responder("Olá "+nome+" Meu nome é Robô Telegram. ",chat_id_)
             print("------------------------------")
 
             time.sleep(5)
@@ -44,6 +60,11 @@ class TelegramBot:
         link_api = self.url_base + "getUpdates"
 
         r = requests.get(link_api)
+        return r.json()
+    
+    def get_info_cep(self, cep):
+        url_base = f'https://viacep.com.br/ws/{cep}/json/'
+        r = requests.get(url_base)
         return r.json()
        
 
