@@ -1,3 +1,4 @@
+
 import json
 import time
 
@@ -18,7 +19,6 @@ class TelegramBot:
         dados = updates["result"]
         chat_id_ = dados[-1]["message"]["from"]["id"]
         self.responder("Digite o CEP para encontrar o endereço.",chat_id_)
-
        
         while True:
             updates = self.obter_updates()            
@@ -26,7 +26,7 @@ class TelegramBot:
             dados = updates["result"]
 
             # print(dados)
-            pdate_id = dados[-1]['update_id']
+            update_id = dados[-1]['update_id']
 
             mensagem = str(dados[-1]["message"]["text"])
             chat_id_ = dados[-1]["message"]["from"]["id"]
@@ -34,17 +34,17 @@ class TelegramBot:
             nome = dados[-1]["message"]["from"]["first_name"]
 
             if mensagem and not(find_cep):
-                print("Aguardando cep...")
+                print("aguardando cep...")
                 if len(mensagem)==8:
                     print("Tamanho de cep Ok!")
                     c = self.get_info_cep(mensagem)
                     self.responder("Sua rua é = "+c['logradouro'],chat_id_)
                     self.responder("Seu estado é = "+c['uf'],chat_id_)
+                    self.responder("Seu Bairro é = "+c['bairro'], chat_id_)
+                    self.responder("O DDD do seu estado é = "+c['ddd'], chat_id_)
                     find_cep = True
 
-            # print("Chat ID = ", chat_id_)
-            # print('Mensagem = ', mensagem)
-
+            
             # self.responder("Olá "+nome+" Meu nome é Robô Telegram. ",chat_id_)
             print("------------------------------")
 
