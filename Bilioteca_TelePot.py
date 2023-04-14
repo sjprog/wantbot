@@ -16,9 +16,9 @@ def on_chat_message(msg):
     content_type, chat_type, chat_id = tp.glance(msg)
 
     keyboard = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text='Aperte', callback_data='Feito'),
-        InlineKeyboardButton(text='Sim', callback_data='Ok'),
-        InlineKeyboardButton(text='Não', callback_data='No'),
+        [InlineKeyboardButton(text='Rua', callback_data='Feito'),
+        InlineKeyboardButton(text='Estado', callback_data='Ok'),
+        InlineKeyboardButton(text='Bairro', callback_data='No'),
         InlineKeyboardButton(text='teste', callback_data='1')],
     ])
 
