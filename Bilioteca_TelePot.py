@@ -8,9 +8,9 @@ import telepot as tp
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardButton, InlineKeyboardMarkup
 
-from token_1 import token
+from token_1 import token_s
 
-bot = tp.Bot(token)
+bot = tp.Bot(token_s)
 
 def on_chat_message(msg):
     content_type, chat_type, chat_id = tp.glance(msg)

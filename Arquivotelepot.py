@@ -4,7 +4,7 @@ import telepot
 from telepot.aio.delegate import create_open, pave_event_space, per_chat_id
 from telepot.aio.loop import MessageLoop
 
-from token_1 import token
+from token_1 import token_s
 
 
 class MessageCounter(telepot.aio.helper.ChatHandler):
@@ -18,7 +18,7 @@ class MessageCounter(telepot.aio.helper.ChatHandler):
 
 
 # get token from command-line
-TOKEN = token
+TOKEN = token_s
 
 bot = telepot.aio.DelegatorBot(TOKEN, [
     pave_event_space()(

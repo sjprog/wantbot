@@ -4,13 +4,13 @@ import time
 
 import requests
 
-from token_1 import token
+from token_1 import token_s
 
 
 class TelegramBot:
 
     def __init__(self):
-        self.url_base = f'http://api.telegram.org/bot{token}/'
+        self.url_base = f'http://api.telegram.org/bot{token_s}/'
 
     def Iniciar(self):
         find_cep = False

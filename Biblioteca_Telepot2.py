@@ -7,9 +7,9 @@ import telepot
 from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardButton, InlineKeyboardMarkup
 
-from token_1 import token
+from token_1 import token_s
 
-bot = telepot.Bot(token)
+bot = telepot.Bot(token_s)
 
 
 def on_chat_message(msg):

@@ -1,10 +1,10 @@
 import telegram
 from telegram.ext import CommandHandler, Updater
 
-from token_1 import token
+from token_1 import token_s
 
-TOKEN = token
-update = Updater(token=TOKEN, use_context=True)
+TOKEN = token_s
+updater = Updater(token=TOKEN, use_context=True)
 
 dispatcher = updater.dispatcher
 

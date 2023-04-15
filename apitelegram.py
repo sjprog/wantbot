@@ -5,9 +5,9 @@ import time
 
 import requests
 
-from token_1 import token
+from token_1 import token_s
 
-url_base = f'http://api.telegram.org/bot{token}'
+url_base = f'http://api.telegram.org/bot{token_s}'
 
 
 while True:
