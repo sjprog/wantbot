@@ -48,5 +48,5 @@ MessageLoop(bot, {'chat': on_chat_message,
 
 print('Listening ...')
 
-while 1:
-    time.sleep(10)
+# while 1:
+#     time.sleep(10)
